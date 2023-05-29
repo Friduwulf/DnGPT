@@ -9,8 +9,9 @@ export default function Fantasy() {
     const [inputValue4, setInputValue4] = useState(0);
     const [inputValue5, setInputValue5] = useState(0);
     const [inputValue6, setInputValue6] = useState(0);
+    const [inputValue7, setInputValue7] = useState(0);
 
-    const maxValue = 36;
+    const maxValue = 42;
 
     const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(event.target.value);
@@ -72,6 +73,17 @@ export default function Fantasy() {
             setInputValue6(remainingValue)
         };
     }
+    const handleChange7 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(event.target.value);
+        const remainingValue = maxValue - getSkillSum() + inputValue7;
+        console.log(`remaining value: ${remainingValue}`)
+        if (value <= remainingValue) {
+            setInputValue7(value)
+        } else {
+            setInputValue7(remainingValue)
+        };
+    }
+
 
     
     function getSkillSum()  {
@@ -81,6 +93,7 @@ export default function Fantasy() {
         let magicValue = Number(inputValue4)
         let stealthValue = Number(inputValue5)
         let dexterityValue = Number(inputValue6)
+        let charismaValue = Number(inputValue7)
 
         let skillArr: number[] =
         [
@@ -89,7 +102,8 @@ export default function Fantasy() {
             Number(intelligenceValue),
             Number(magicValue),
             Number(stealthValue),
-            Number(dexterityValue)
+            Number(dexterityValue),
+            Number(charismaValue)
         ];
             let total = 0;
             for (let i = 0; i < skillArr.length; i++) {
@@ -190,6 +204,23 @@ export default function Fantasy() {
         <div className='bg-secondary w-6/12 pb-5'>
             <h1 className='flex justify-center text-2xl'>Dexterity</h1>
             <input id='Dexterity' type="range" min="0" max="10" value={inputValue6} onChange={handleChange6} className="range bg-secondary range-primary" step="1" />
+            <div className="w-full flex justify-between text-xs px-2 bg-secondary">
+            <span>0</span> 
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            </div>
+        </div>
+        <div className='bg-secondary w-6/12 pb-5'>
+            <h1 className='flex justify-center text-2xl'>Charisma</h1>
+            <input id='Charisma' type="range" min="0" max="10" value={inputValue7} onChange={handleChange7} className="range bg-secondary range-primary" step="1" />
             <div className="w-full flex justify-between text-xs px-2 bg-secondary">
             <span>0</span> 
             <span>1</span>

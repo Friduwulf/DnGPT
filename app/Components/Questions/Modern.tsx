@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-export default function SciFi() {
+export default function Modern() {
 
     const [inputValue1, setInputValue1] = useState(0);
     const [inputValue2, setInputValue2] = useState(0);
@@ -75,21 +75,21 @@ export default function SciFi() {
 
     
     function getSkillSum()  {
-        let meleeValue = Number(inputValue1)
-        let charismaValue = Number(inputValue2)
+        let strengthValue = Number(inputValue1)
+        let speedValue = Number(inputValue2)
         let intelligenceValue = Number(inputValue3)
-        let computerValue = Number(inputValue4)
+        let magicValue = Number(inputValue4)
         let stealthValue = Number(inputValue5)
-        let shootingValue = Number(inputValue6)
+        let dexterityValue = Number(inputValue6)
 
         let skillArr: number[] =
         [
-            Number(meleeValue),
-            Number(charismaValue),
+            Number(strengthValue),
+            Number(speedValue),
             Number(intelligenceValue),
-            Number(computerValue),
+            Number(magicValue),
             Number(stealthValue),
-            Number(shootingValue)
+            Number(dexterityValue)
         ];
             let total = 0;
             for (let i = 0; i < skillArr.length; i++) {
@@ -103,8 +103,8 @@ export default function SciFi() {
     <div className='flex flex-col items-center justify-center pt-5 pb-5 bg-secondary'>
         <h1 className='text-2xl'>You Have {maxValue - getSkillSum()} Skill Points Remaining</h1>
         <div className='bg-secondary w-6/12 pb-5'>
-            <h1 className='flex justify-center text-2xl'>Melee</h1>
-            <input id='Melee' type="range" min="0" max="10" value={inputValue1} onChange={handleChange1} className="range bg-secondary range-primary" step="1" />
+            <h1 className='flex justify-center text-2xl'>Strength</h1>
+            <input id='Strength' type="range" min="0" max="10" value={inputValue1} onChange={handleChange1} className="range bg-secondary range-primary" step="1" />
             <div className="w-full flex justify-between text-xs px-2 bg-secondary">
             <span>0</span>    
             <span>1</span>
@@ -120,8 +120,8 @@ export default function SciFi() {
             </div>
         </div>
         <div className='bg-secondary w-6/12 pb-5'>
-            <h1 className='flex justify-center text-2xl'>Charisma</h1>
-            <input id='Charisma' type="range" min="0" max="10" value={inputValue2} onChange={handleChange2} className="range bg-secondary range-primary" step="1" />
+            <h1 className='flex justify-center text-2xl'>Speed</h1>
+            <input id='Speed' type="range" min="0" max="10" value={inputValue2} onChange={handleChange2} className="range bg-secondary range-primary" step="1" />
             <div className="w-full flex justify-between text-xs px-2 bg-secondary">
             <span>0</span> 
             <span>1</span>
@@ -154,8 +154,8 @@ export default function SciFi() {
             </div>
         </div>
         <div className='bg-secondary w-6/12 pb-5'>
-            <h1 className='flex justify-center text-2xl'>Computer</h1>
-            <input id='Computer' type="range" min="0" max="10" value={inputValue4} onChange={handleChange4} className="range bg-secondary range-primary" step="1" />
+            <h1 className='flex justify-center text-2xl'>Magic</h1>
+            <input id='Magic' type="range" min="0" max="10" value={inputValue4} onChange={handleChange4} className="range bg-secondary range-primary" step="1" />
             <div className="w-full flex justify-between text-xs px-2 bg-secondary">
             <span>0</span> 
             <span>1</span>
@@ -188,8 +188,8 @@ export default function SciFi() {
             </div>
         </div>
         <div className='bg-secondary w-6/12 pb-5'>
-            <h1 className='flex justify-center text-2xl'>Shooting</h1>
-            <input id='Shooting' type="range" min="0" max="10" value={inputValue6} onChange={handleChange6} className="range bg-secondary range-primary" step="1" />
+            <h1 className='flex justify-center text-2xl'>Dexterity</h1>
+            <input id='Dexterity' type="range" min="0" max="10" value={inputValue6} onChange={handleChange6} className="range bg-secondary range-primary" step="1" />
             <div className="w-full flex justify-between text-xs px-2 bg-secondary">
             <span>0</span> 
             <span>1</span>
