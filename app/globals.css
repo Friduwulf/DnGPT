@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Colors */
+@layer utilities {
+  .bg-customGreen {
+    --tw-bg-opacity: 1;
+    background-color: rgba(73, 93, 50, var(--tw-bg-opacity));
+  }
+
+  .bg-customBlue {
+    --tw-bg-opacity: 1;
+    background-color: rgba(79, 121)
+  }
+}
