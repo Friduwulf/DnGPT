@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -20,9 +21,9 @@ export default function Home() {
               </label>
             </div>
           <div className="flex-none gap-2">
-            <div className="form-control">
-              <a className="btn">Begin A New Adventure</a>
-            </div>
+            <Link href='/NewAdventure'>
+              <button className="btn">Begin A New Adventure</button>
+            </Link>
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
