@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 
-export default function Midieval() {
+export default function Mediaeval() {
 
     const [inputValue1, setInputValue1] = useState(0);
     const [inputValue2, setInputValue2] = useState(0);

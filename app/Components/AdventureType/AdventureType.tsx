@@ -1,8 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-// import Fantasy from '../Questions/Fantasy';
-import Midieval from '../Characters/Midieval';
+import Mediaeval from '../Characters/Mediaeval';
 import Modern from '../Characters/Modern';
 import Pirate from '../Characters/Pirate';
 import SciFi from '../Characters/SciFi';
@@ -24,7 +23,7 @@ const SelectedAdventure: React.FC = () => {
                 <option value='SciFi'>SciFi</option>
                 {/* <option value='Modern'>Modern</option> */}
                 {/* <option value='Pirate'>Pirate</option> */}
-                <option value='Midieval'>Midieval</option>
+                <option value='Mediaeval'>Mediaeval</option>
             </select>
         </div>
         {selected === 'none' && <Fantasy />}
@@ -32,7 +31,7 @@ const SelectedAdventure: React.FC = () => {
         {selected === 'SciFi' && <SciFi />}
         {selected === 'Modern' && <Modern />}
         {selected === 'Pirate' && <Pirate />}
-        {selected === 'Midieval' && <Midieval />}
+        {selected === 'Mediaeval' && <Mediaeval />}
         </>
     );
 };

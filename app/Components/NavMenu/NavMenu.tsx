@@ -1,7 +1,17 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Home() {
+  const { data: session, status } = useSession();
+  const isSigningOut = status === "loading";
+
+  const handleLogout = async () => {
+    await signOut();
+  }
+
 
   return (
     <>
@@ -41,8 +51,25 @@ export default function Home() {
                     Profile
                   </a>
                 </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                {session ? (
+                  <li>
+                    <button
+                      onClick={handleLogout}
+                      disabled={isSigningOut}
+                    >
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <li>
+                    <Link href="api/auth/signin">
+                      Sign In
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>

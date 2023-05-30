@@ -25,9 +25,9 @@ const MyPage = (): JSX.Element => {
   };
 
   return (
-    <div className="container mx-auto p-4 bg-secondary">
+    <div className="container flex-column mx-auto p-4 max-w-full bg-secondary">
       <h1 className="text-3xl font-bold mb-4">Welcome to Eldoria!</h1>
-      <p className="mb-4">
+      <p className="mb-4 w-2/3">
       Welcome to the world of Eldoria, a land brimming with magic, adventure, and ancient secrets. Within its vast and diverse realms, countless civilizations, mythical creatures, and powerful artifacts await those brave enough to explore its depths.
       </p>
       <p className="mb-4">
